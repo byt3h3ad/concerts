@@ -41,6 +41,7 @@ async function pathfinderQuery(
   return await res.json();
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function fetchSpotifyEventUrl(
   uri: `spotify:concert:${string}`
 ): Promise<string> {
