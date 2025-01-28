@@ -3,3 +3,5 @@ export const CONCERT_FEED = {
   geoHash: "tdr1v7w3jyt3",
   geonameId: "1277333",
 };
+
+export const PROD_URL = "https://concerts.adhiraj.tech";

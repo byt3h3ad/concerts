@@ -18,7 +18,7 @@ export const ConcertCard: React.FC<VenueEvent> = ({
       target="_blank"
     >
       <Image
-        src={thumbnailUrl || "/placeholder.png"}
+        src={thumbnailUrl || "/placeholder.jpg"}
         width={80}
         height={80}
         alt={artist}
