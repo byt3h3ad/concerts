@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: "concerts in bangalore",
     description: "scraped directly from spotify",
     url: PROD_URL,
+    tags: ["concerts", "bangalore", "spotify", "bengaluru"],
   },
 };
 
