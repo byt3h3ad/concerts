@@ -3,19 +3,19 @@ export const CONCERT_FEED = {
 };
 
 export const LOCATIONS = {
-  Bangalore: {
+  bangalore: {
     geoHash: "tdr1v7w3jyt3",
     geonameId: "1277333",
   },
-  Hyderabad: {
+  hyderabad: {
     geoHash: "tepfcep66n9t",
     geonameId: "1269843",
   },
-  Delhi: {
+  delhi: {
     geoHash: "ttngj4e7xs0w",
     geonameId: "1273294",
   },
-  Gurgaon: {
+  gurgaon: {
     geoHash: "ttncbyjytcrx",
     geonameId: "1270642",
   },

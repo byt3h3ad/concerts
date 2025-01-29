@@ -1,5 +1,6 @@
+import { LOCATIONS } from "./config";
 import { fetchSpotifyEvents } from "./spotify";
-import { VenueEvent } from "./types";
+import { CityName, VenueEvent } from "./types";
 
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -37,4 +38,10 @@ export async function eventsFetcher(
     }
   }
   return orderedEvents;
+}
+
+export const cities = Object.keys(LOCATIONS);
+
+export function isValidCity(city: string): city is CityName {
+  return cities.includes(city);
 }

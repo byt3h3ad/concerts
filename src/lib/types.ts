@@ -1,3 +1,5 @@
+import { LOCATIONS } from "./config";
+
 export interface VenueEvent {
   venue: string;
   artist: string;
@@ -8,3 +10,5 @@ export interface VenueEvent {
   thumbnailUrl: string | null;
   url: string;
 }
+
+export type CityName = keyof typeof LOCATIONS;
