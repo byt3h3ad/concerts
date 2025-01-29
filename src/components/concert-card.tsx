@@ -23,6 +23,8 @@ export const ConcertCard: React.FC<VenueEvent> = ({
         height={80}
         alt={artist}
         className="rounded aspect-square object-cover size-20"
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAgElEQVR42u3QQREAMAgAoBlkrSxrOu3g+YQIxK/sx1oIFChQoEAEChQoEIECBQpEoECBAhEoUKBABAoUKBCBAgUKRKBAgQIRKFCgQAQKFCgQgQIFChQoUKBAgQIRKFCgQAQKFCgQgQIFCkSgQIECEShQoEAEChQoEIECBQpE4J0BNNitIUXKjVUAAAAASUVORK5CYII="
       />
       <div>
         <p className="">{artist}</p>
