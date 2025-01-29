@@ -19,6 +19,14 @@ export const LOCATIONS = {
     geoHash: "ttncbyjytcrx",
     geonameId: "1270642",
   },
+  pune: {
+    geoHash: "tek92vuh6ce8",
+    geonameId: "1259229",
+  },
+  shillong: {
+    geoHash: "wh936xguwmks",
+    geonameId: "1256523",
+  },
 };
 
 export const PROD_URL = "https://concerts.adhiraj.tech";
