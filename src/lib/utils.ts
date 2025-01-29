@@ -1,4 +1,5 @@
 import { fetchSpotifyEvents } from "./spotify";
+import { VenueEvent } from "./types";
 
 export function formatDate(dateString: string): string {
   const date = new Date(dateString);
@@ -15,8 +16,11 @@ export function formatDate(dateString: string): string {
   return date.toLocaleString("en-US", options);
 }
 
-export async function eventsFetcher() {
-  const events = await fetchSpotifyEvents();
+export async function eventsFetcher(
+  hash: string,
+  id: string
+): Promise<VenueEvent[]> {
+  const events = await fetchSpotifyEvents(hash, id);
   const orderedEvents = events
     .flat()
     .toSorted((a, b) => a.showTime.getTime() - b.showTime.getTime());
