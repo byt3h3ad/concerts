@@ -1,9 +1,13 @@
 import { ConcertCard } from "@/components/concert-card";
+import { LOCATIONS } from "@/lib/config";
 import { VenueEvent } from "@/lib/types";
 import { eventsFetcher } from "@/lib/utils";
 
 export default async function Home() {
-  const events = await eventsFetcher();
+  const events = await eventsFetcher(
+    LOCATIONS.Bangalore.geoHash,
+    LOCATIONS.Bangalore.geonameId
+  );
   return (
     <div className="grid items-center justify-items-center min-h-screen p-8 gap-8 bg-black">
       <h1 className="text-zinc-300 text-xl">Concerts in Bengaluru</h1>

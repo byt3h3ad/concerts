@@ -57,12 +57,15 @@ async function fetchSpotifyEventUrl(
   );
 }
 
-export async function fetchSpotifyEvents(): Promise<VenueEvent[]> {
+export async function fetchSpotifyEvents(
+  hash: string,
+  id: string
+): Promise<VenueEvent[]> {
   console.log("Fetching all Spotify events");
 
   const json = await pathfinderQuery("concertFeed", CONCERT_FEED.key, {
-    geoHash: CONCERT_FEED.geoHash,
-    geonameId: CONCERT_FEED.geonameId,
+    geoHash: hash,
+    geonameId: id,
     dateRange: null,
     conceptUris: null,
     paginationKey: null,

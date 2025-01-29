@@ -3,8 +3,8 @@ import { eventsFetcher } from "@/lib/utils";
 
 export async function GET() {
   const events = await eventsFetcher(
-    LOCATIONS.Bangalore.geoHash,
-    LOCATIONS.Bangalore.geonameId
+    LOCATIONS.Delhi.geoHash,
+    LOCATIONS.Delhi.geonameId
   );
   return Response.json({ events });
 }
