@@ -1,13 +1,5 @@
 import { PROD_URL } from "@/lib/config";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "concerts in bangalore",
@@ -28,11 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased bg-black`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
+    <div className="grid items-center justify-items-center min-h-screen p-8 gap-8">
+      {children}
+    </div>
   );
 }

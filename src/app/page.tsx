@@ -1,19 +1,19 @@
-import { ConcertCard } from "@/components/concert-card";
-import { LOCATIONS } from "@/lib/config";
-import { VenueEvent } from "@/lib/types";
-import { eventsFetcher } from "@/lib/utils";
+import { cities } from "@/lib/utils";
+import Link from "next/link";
 
 export default async function Home() {
-  const events = await eventsFetcher(
-    LOCATIONS.Bangalore.geoHash,
-    LOCATIONS.Bangalore.geonameId
-  );
   return (
-    <div className="grid items-center justify-items-center min-h-screen p-8 gap-8 bg-black">
-      <h1 className="text-zinc-300 text-xl">Concerts in Bengaluru</h1>
-      <section className="gap-6 grid grid-rows-1 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {events.map((event: VenueEvent, index: number) => (
-          <ConcertCard key={index} {...event} />
+    <div className="grid items-center justify-center gap-6 min-h-screen p-8">
+      <section className="grid gap-6 text-zinc-400 ">
+        <h1 className="text-zinc-300 text-xl py-6">Index</h1>
+        {cities.map((city, index: number) => (
+          <Link
+            key={index}
+            href={city}
+            className="capitalize hover:underline underline-offset-4 hover:text-zinc-100 transition-all duration-300"
+          >
+            {city}
+          </Link>
         ))}
       </section>
     </div>
