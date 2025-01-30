@@ -1,5 +1,5 @@
 import { ConcertCard } from "@/components/concert-card";
-import { LOCATIONS } from "@/lib/config";
+import { LOCATIONS, PROD_URL } from "@/lib/config";
 import { VenueEvent } from "@/lib/types";
 import { eventsFetcher, isValidCity } from "@/lib/utils";
 import type { Metadata, ResolvingMetadata } from "next";
@@ -17,10 +17,9 @@ export async function generateMetadata(
   const previousImages = (await parent).openGraph?.images || [];
 
   return {
-    // title: `concerts in ${slug}`,
     title: slug,
     openGraph: {
-      images: ["/some-specific-page-image.jpg", ...previousImages],
+      images: [`${PROD_URL}/api/${slug}/og`, ...previousImages],
     },
   };
 }
