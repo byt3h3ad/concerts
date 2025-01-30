@@ -2,12 +2,30 @@ import { ConcertCard } from "@/components/concert-card";
 import { LOCATIONS } from "@/lib/config";
 import { VenueEvent } from "@/lib/types";
 import { eventsFetcher, isValidCity } from "@/lib/utils";
+import type { Metadata, ResolvingMetadata } from "next";
 
-export default async function Page({
-  params,
-}: {
+type Props = {
   params: Promise<{ slug: string }>;
-}) {
+};
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = (await params).slug;
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || [];
+
+  return {
+    // title: `concerts in ${slug}`,
+    title: slug,
+    openGraph: {
+      images: ["/some-specific-page-image.jpg", ...previousImages],
+    },
+  };
+}
+
+export default async function Page({ params }: Props) {
   const slug = (await params).slug;
   if (isValidCity(slug)) {
     const { geoHash, geonameId } = LOCATIONS[slug];

@@ -1,16 +1,9 @@
-import { PROD_URL } from "@/lib/config";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "concerts in bangalore",
-  description: "scraped directly from spotify",
-  metadataBase: new URL(PROD_URL),
-  openGraph: {
-    siteName: "concerts in bangalore",
-    title: "concerts in bangalore",
-    description: "scraped directly from spotify",
-    url: PROD_URL,
-    tags: ["concerts", "bangalore", "spotify", "bengaluru"],
+  title: {
+    template: "concerts in %s",
+    default: "town",
   },
 };
 

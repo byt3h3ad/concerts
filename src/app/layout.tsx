@@ -1,4 +1,5 @@
 import { PROD_URL } from "@/lib/config";
+import { cities } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -10,15 +11,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "concerts in bangalore",
+  title: "concerts in town",
   description: "scraped directly from spotify",
   metadataBase: new URL(PROD_URL),
   openGraph: {
-    siteName: "concerts in bangalore",
-    title: "concerts in bangalore",
+    siteName: "concerts in town",
+    title: "concerts in town",
     description: "scraped directly from spotify",
     url: PROD_URL,
-    tags: ["concerts", "bangalore", "spotify", "bengaluru"],
+    tags: ["concerts", "spotify", "bengaluru", "town"].concat(cities),
   },
 };
 
